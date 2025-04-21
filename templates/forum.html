@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Форум{% endblock %}
+
+{% block content %}
+    <h2>Форум</h2>
+
+    <form method="POST">
+        <div>
+            <label for="title">Заголовок:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div>
+            <label for="author">Ваше имя:</label>
+            <input type="text" id="author" name="author" required>
+        </div>
+        <div>
+            <label for="content">Сообщение:</label>
+            <textarea id="content" name="content" required></textarea>
+        </div>
+        <button type="submit">Опубликовать</button>
+    </form>
+
+    <hr>
+
+    <h3>Сообщения форума</h3>
+    {% if posts %}
+        {% for post in posts %}
+            <article>
+                <h4>{{ post.title }}</h4>
+                <p>{{ post.content }}</p>
+                <small>Автор: {{ post.author }}</small>
+            </article>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>Пока нет сообщений. Будьте первым!</p>
+    {% endif %}
+{% endblock %}

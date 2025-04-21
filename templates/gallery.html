@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Фотогалерея{% endblock %}
+
+{% block content %}
+    <h2>Фотогалерея</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="file">Выберите изображение для загрузки:</label>
+            <input type="file" id="file" name="file" accept="image/*" required>
+        </div>
+        <button type="submit">Загрузить</button>
+    </form>
+
+    <hr>
+
+    <h3>Загруженные изображения</h3>
+    <div class="gallery">
+        {% if images %}
+            {% for image in images %}
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/uploads/' + image) }}" alt="Gallery image">
+                    <p>{{ image }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Пока нет загруженных изображений.</p>
+        {% endif %}
+    </div>
+{% endblock %}
