@@ -6,6 +6,7 @@
     <title>{% block title %}Мой сайт{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
     <header>
         <h1>Мой сайт на Flask</h1>
@@ -23,6 +24,7 @@
         </nav>
     </header>
 
+
     <main>
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
@@ -35,8 +37,11 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer>
+    <footer style="height: 120px">
         <p>&copy; 2023 Мой сайт на Flask. Все права защищены.</p>
     </footer>
 </body>
+
+
+
 </html>
