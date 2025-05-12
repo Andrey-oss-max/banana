@@ -3,9 +3,11 @@
 {% block title %}Главная страница{% endblock %}
 
 {% block content %}
-   <h1>
-        <img alt="aaaa" src="{{ url_for('static', filename='images/flask-photo2.webp') }}">
-    </h1>
+   <div style="display: flex">
+       <img alt="aaaa" src="{{ url_for('static', filename='images/flask-photo2.webp') }}">
+       <div class="tenor-gif-embed" data-postid="19045323" data-share-method="host" data-aspect-ratio="1" data-width="50%"><a href="https://tenor.com/view/history-history-has-its-eyes-on-you-eyes-ballot-every-vote-counts-gif-19045323">History History Has Its Eyes On You Sticker</a>from <a href="https://tenor.com/search/history-stickers">History Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
     <h2>Добро пожаловать на мой сайт!</h2>
     <p>Здесь вы можете прикрепить свои фото к с воим историям, а так же прочитать истории людей,которые посетили наш сайт.</p>
+
 {% endblock %}
